@@ -1,0 +1,9 @@
+Mail2Blob/Resources/password.bin
+*/.vs/*
+*/bin/*
+*/**/bin/*
+*/**/obj/*
+*/debug/*
+*/node_modules/*
+*/packages/*
+Mail2Blob/Resources/Mail2BlobConfigCGService.xml

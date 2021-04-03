@@ -1,0 +1,9 @@
+.guess-table {
+  display: inline-block;
+  max-height:99vh;
+  width:19vw;
+  overflow:scroll;
+  margin-top:10vh;
+  vertical-align: top;
+}
+

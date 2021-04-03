@@ -1,0 +1,1 @@
+docker kill geo-server ; ./build.ps1 ; docker run -p 5000:5000 --rm --name geo-server crowdsourced-geoguesser;

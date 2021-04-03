@@ -1,0 +1,71 @@
+
+
+#start-view{
+  display:inline-block;
+  padding-top:20vw;
+}
+
+.forms{
+  display: flex;
+  vertical-align: middle
+}
+
+.username-input{
+  display: block;
+  padding: 10px;
+  margin: auto
+}
+.enter-room-form {
+  display:block;
+  margin-right:5vw;
+}
+
+.roomcode-input{
+  display: block;
+  padding: 10px;
+}
+
+.enter-room-submit{
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+}
+.create-room-form {
+  display:block;
+  margin-left:5vw;
+}
+.create-room-submit{
+  display: inline-flex;
+  vertical-align: middle;
+  padding:50px;
+  margin:20px auto;
+}
+
+#player-view{
+  display:block;
+  width:100vw;
+
+}
+
+
+#player-view{
+  display:block;
+  width:100vw;
+  max-height:100vh;
+
+}
+.player-view-success{
+  display:inline-block;
+  width:80vw;
+  height:99vh;
+}
+
+.play-username-form{
+  padding-top:20vw;
+  display: inline-flex;
+}
+
+.label-text{
+  margin-bottom: 20px
+
+}

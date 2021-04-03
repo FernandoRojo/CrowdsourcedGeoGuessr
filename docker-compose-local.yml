@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  server:
+    ports:
+      - "5000:5000"
+    image: fernandorojo72/crowdsourcedgeoguessr_server
+  client:
+    ports:
+      - "3000:3000"
+    image: fernandorojo72/crowdsourcedgeoguessr_client

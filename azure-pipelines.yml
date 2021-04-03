@@ -1,0 +1,54 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+resources:
+- repo: self
+
+variables:
+  clienttag: 'cg-supportblobindexer-client'
+  servertag: 'cg-supportblobindexer-ser'
+  canDetectedDockerImages: 'true'
+
+stages:
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: Docker@2
+
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: '$(Build.SourcesDirectory)/client/Dockerfile'
+        tags: |
+          $(clienttag)
+
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: '$(Build.SourcesDirectory)/server/Dockerfile'
+        tags: |
+          $(servertag)
+    - task: DockerCompose@0
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: '1ES-PREPROVISION(9893e3ca-87be-4a4a-a56a-9c90009e20d3)'
+        azureContainerRegistry: 'cgcontainerpoc'
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Run a Docker Compose command'
+        dockerComposeCommand: 'build'
+
+    - task: cgcdazdowrapperppe@0
+      inputs:
+        scanType: 'Register'
+        verbosity: 'Verbose'
+        alertWarningLevel: 'High'
